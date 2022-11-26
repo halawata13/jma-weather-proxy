@@ -1,0 +1,50 @@
+{
+  "20221003150000": {
+    "prefNumber": 51,
+    "observationNumber": 11,
+    "snow1h": [
+      0,
+      null
+    ],
+    "snow6h": [
+      0,
+      null
+    ],
+    "snow12h": [
+      0,
+      null
+    ],
+    "snow24h": [
+      0,
+      null
+    ],
+    "precipitation10m": [
+      0.0,
+      0
+    ],
+    "precipitation1h": [
+      0.0,
+      0
+    ],
+    "precipitation3h": [
+      0.0,
+      0
+    ],
+    "precipitation24h": [
+      0.0,
+      0
+    ],
+    "maxTempTime": {
+      "hour": null,
+      "minute": null
+    },
+    "minTempTime": {
+      "hour": null,
+      "minute": null
+    },
+    "gustTime": {
+      "hour": null,
+      "minute": null
+    }
+  }
+}

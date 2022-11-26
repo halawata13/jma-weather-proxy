@@ -1,0 +1,149 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ForecastItem {
+  date: String!
+  weatherCode: String
+  weather: String
+  jmaWeatherImgCode: String
+  wind: String
+  wave: String
+  pop: [Int]!
+  tempMin: Int
+  tempMax: Int
+}
+
+type Forecast {
+  items: [ForecastItem!]!
+  reportDatetime: String!
+  areaCode: String!
+  areaName: String!
+}
+
+type WeeklyForecastItem {
+  date: String!
+  weatherCode: String
+  jmaWeatherImgCode: String
+  pop: Int
+  reliability: String
+  tempMin: Int
+  tempMinUpper: Int
+  tempMinLower: Int
+  tempMax: Int
+  tempMaxUpper: Int
+  tempMaxLower: Int
+}
+
+type WeeklyForecast {
+  items: [WeeklyForecastItem!]!
+  reportDatetime: String!
+  weekAreaCode: String!
+  weekAreaName: String!
+}
+
+type SeasonItem {
+  temperature: [String]!
+  precipitation: [String]
+  sunshine: [String]
+  snowfall: [String]
+  fromDate: String!
+  toDate: String!
+}
+
+type Season {
+  items: [SeasonItem!]!
+  reportDatetime: String!
+  targetDatetime: String!
+  seasonAreaCode: String!
+  seasonAreaName: String!
+}
+
+type TwoWeekForecastItem {
+  date: String!
+  tempMin: Int!
+  tempMinUpper: Int!
+  tempMinLower: Int!
+  tempMinNormal: Float!
+  tempMax: Int!
+  tempMaxUpper: Int!
+  tempMaxLower: Int!
+  tempMaxNormal: Float!
+}
+
+type TwoWeekForecast {
+  week1: [TwoWeekForecastItem!]!
+  week2: [TwoWeekForecastItem!]!
+  reportDatetime: String!
+  twoWeekAreaCode: String!
+  twoWeekAreaName: String!
+}
+
+type Area {
+  areaCode: String!
+  regionName: String!
+  prefName: String!
+  areaName: String!
+}
+
+type Pref {
+  areaItems: [Area!]!
+  prefName: String!
+  prefCode: String!
+  regionName: String!
+  regionCode: String!
+}
+
+type Region {
+  prefItems: [Pref!]!
+  regionName: String!
+  regionCode: String!
+}
+
+type RegionList {
+  regionItems: [Region!]!
+}
+
+type Amedas {
+  pressure: Float
+  normalPressure: Float
+  temp: Float
+  humidity: Int
+  snow: Int
+  snow1h: Int
+  snow6h: Int
+  snow12h: Int
+  snow24h: Int
+  sun10m: Int
+  sun1h: Float
+  precipitation10m: Float
+  precipitation1h: Float
+  precipitation3h: Float
+  precipitation24h: Float
+  windDirection: Int
+  wind: Float
+  maxTempTimeHour: Int
+  maxTempTimeMinute: Int
+  maxTemp: Float
+  minTempTimeHour: Int
+  minTempTimeMinute: Int
+  minTemp: Float
+  gustTimeHour: Int
+  gustTimeMinute: Int
+  gustDirection: Int
+  gust: Float
+  reportDatetime: String!
+  amedasCode: String!
+  amedasName: String!
+}
+
+type Query {
+  daily(areaCode: String!): Forecast!
+  weekly(areaCode: String!): WeeklyForecast!
+  month1(areaCode: String!): Season!
+  month3(areaCode: String!): Season!
+  month6(areaCode: String!): Season!
+  twoWeek(areaCode: String!): TwoWeekForecast!
+  regionList: RegionList!
+  amedas(areaCode: String!): Amedas!
+}

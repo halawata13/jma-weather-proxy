@@ -1,0 +1,506 @@
+{
+  "publishingOffice": "気象庁",
+  "editorialOffice": "気象庁本庁",
+  "datetime": "2022-07-19T04:33:46Z",
+  "headlineText": "",
+  "reportDatetime": "2022-07-19T14:00:00+09:00",
+  "targetDatetime": "2022-08-01T00:00:00+09:00",
+  "targetDuration": "P3M",
+  "metInfos": [
+    {
+      "duration": "P3M",
+      "termName": "向こう３か月",
+      "items": [
+        {
+          "type": "出現の可能性が最も大きい天候と、特徴のある気温、降水量等の確率",
+          "areaCode": "010000",
+          "areaName": "全国",
+          "feature": {
+            "elements": [
+              {
+                "kind": "気温",
+                "text": "平均気温は、北日本で平年並または高い確率ともに４０％、東・西日本と沖縄・奄美で高い確率５０％です。"
+              }
+            ]
+          }
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020100",
+          "areaName": "北日本",
+          "kind": "気温",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020200",
+          "areaName": "東日本",
+          "kind": "気温",
+          "below": "20",
+          "normal": "30",
+          "above": "50"
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020300",
+          "areaName": "西日本",
+          "kind": "気温",
+          "below": "20",
+          "normal": "30",
+          "above": "50"
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020400",
+          "areaName": "沖縄・奄美",
+          "kind": "気温",
+          "below": "20",
+          "normal": "30",
+          "above": "50"
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020110",
+          "areaName": "北日本日本海側",
+          "kind": "降水量",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020120",
+          "areaName": "北日本太平洋側",
+          "kind": "降水量",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020210",
+          "areaName": "東日本日本海側",
+          "kind": "降水量",
+          "below": "30",
+          "normal": "30",
+          "above": "40"
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020220",
+          "areaName": "東日本太平洋側",
+          "kind": "降水量",
+          "below": "30",
+          "normal": "30",
+          "above": "40"
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020310",
+          "areaName": "西日本日本海側",
+          "kind": "降水量",
+          "below": "30",
+          "normal": "30",
+          "above": "40"
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020320",
+          "areaName": "西日本太平洋側",
+          "kind": "降水量",
+          "below": "30",
+          "normal": "30",
+          "above": "40"
+        },
+        {
+          "type": "地域・期間平均平年偏差各階級の確率",
+          "areaCode": "020400",
+          "areaName": "沖縄・奄美",
+          "kind": "降水量",
+          "below": "30",
+          "normal": "30",
+          "above": "40"
+        }
+      ]
+    }
+  ],
+  "timeDefines": [
+    "2022-08-01T00:00:00+09:00",
+    "2022-09-01T00:00:00+09:00",
+    "2022-10-01T00:00:00+09:00"
+  ],
+  "timeInfos": [
+    {
+      "type": "出現の可能性が最も大きい天候と、特徴のある気温、降水量等の確率",
+      "areaCode": "010000",
+      "areaName": "全国",
+      "feature": {
+        "situations": [
+          {
+            "text": "　北日本では、天気は数日の周期で変わるでしょう。東・西日本と沖縄・奄美では、平年と同様に晴れの日が多いでしょう。",
+            "refId": "1"
+          },
+          {
+            "text": "　北・東日本と西日本日本海側では、天気は数日の周期で変わるでしょう。西日本太平洋側と沖縄・奄美では、平年と同様に晴れの日が多いでしょう。",
+            "refId": "2"
+          },
+          {
+            "text": "　北日本と東日本日本海側では、天気は数日の周期で変わるでしょう。西日本日本海側では、天気は数日の周期で変わり、平年と同様に晴れの日が多いでしょう。東・西日本太平洋側と沖縄・奄美では、天気は数日の周期で変わりますが、平年に比べ晴れの日が少ないでしょう。",
+            "refId": "3"
+          }
+        ],
+        "elements": [
+          {
+            "kind": "気温",
+            "texts": [
+              {
+                "text": "気温は、北日本と沖縄・奄美で平年並または高い確率ともに４０％、東・西日本で高い確率５０％です。",
+                "refId": "1"
+              },
+              {
+                "text": "気温は、北日本と沖縄・奄美で平年並または高い確率ともに４０％、東・西日本で高い確率５０％です。",
+                "refId": "2"
+              },
+              {
+                "text": "気温は、東・西日本と沖縄・奄美で平年並または高い確率ともに４０％です。",
+                "refId": "3"
+              }
+            ]
+          },
+          {
+            "kind": "降水量",
+            "texts": [
+              {
+                "text": "降水量は、東・西日本太平洋側と沖縄・奄美で平年並または多い確率ともに４０％です。",
+                "refId": "3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020100",
+      "areaName": "北日本",
+      "probabilities": [
+        {
+          "kind": "気温",
+          "refId": "1",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        },
+        {
+          "kind": "気温",
+          "refId": "2",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        },
+        {
+          "kind": "気温",
+          "refId": "3",
+          "below": "30",
+          "normal": "30",
+          "above": "40"
+        }
+      ]
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020200",
+      "areaName": "東日本",
+      "probabilities": [
+        {
+          "kind": "気温",
+          "refId": "1",
+          "below": "20",
+          "normal": "30",
+          "above": "50"
+        },
+        {
+          "kind": "気温",
+          "refId": "2",
+          "below": "20",
+          "normal": "30",
+          "above": "50"
+        },
+        {
+          "kind": "気温",
+          "refId": "3",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        }
+      ]
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020300",
+      "areaName": "西日本",
+      "probabilities": [
+        {
+          "kind": "気温",
+          "refId": "1",
+          "below": "20",
+          "normal": "30",
+          "above": "50"
+        },
+        {
+          "kind": "気温",
+          "refId": "2",
+          "below": "20",
+          "normal": "30",
+          "above": "50"
+        },
+        {
+          "kind": "気温",
+          "refId": "3",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        }
+      ]
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020400",
+      "areaName": "沖縄・奄美",
+      "probabilities": [
+        {
+          "kind": "気温",
+          "refId": "1",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        },
+        {
+          "kind": "気温",
+          "refId": "2",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        },
+        {
+          "kind": "気温",
+          "refId": "3",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        }
+      ]
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020110",
+      "areaName": "北日本日本海側",
+      "probabilities": [
+        {
+          "kind": "降水量",
+          "refId": "1",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "2",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "3",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        }
+      ]
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020120",
+      "areaName": "北日本太平洋側",
+      "probabilities": [
+        {
+          "kind": "降水量",
+          "refId": "1",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "2",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "3",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        }
+      ]
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020210",
+      "areaName": "東日本日本海側",
+      "probabilities": [
+        {
+          "kind": "降水量",
+          "refId": "1",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "2",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "3",
+          "below": "30",
+          "normal": "30",
+          "above": "40"
+        }
+      ]
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020220",
+      "areaName": "東日本太平洋側",
+      "probabilities": [
+        {
+          "kind": "降水量",
+          "refId": "1",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "2",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "3",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        }
+      ]
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020310",
+      "areaName": "西日本日本海側",
+      "probabilities": [
+        {
+          "kind": "降水量",
+          "refId": "1",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "2",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "3",
+          "below": "30",
+          "normal": "30",
+          "above": "40"
+        }
+      ]
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020320",
+      "areaName": "西日本太平洋側",
+      "probabilities": [
+        {
+          "kind": "降水量",
+          "refId": "1",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "2",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "3",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        }
+      ]
+    },
+    {
+      "type": "地域・期間平均平年偏差各階級の確率",
+      "areaCode": "020400",
+      "areaName": "沖縄・奄美",
+      "probabilities": [
+        {
+          "kind": "降水量",
+          "refId": "1",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "2",
+          "below": "30",
+          "normal": "40",
+          "above": "30"
+        },
+        {
+          "kind": "降水量",
+          "refId": "3",
+          "below": "20",
+          "normal": "40",
+          "above": "40"
+        }
+      ]
+    }
+  ],
+  "additionalInfos": [
+    {
+      "target": "１か月予報",
+      "text": "１か月予報：毎週木曜日　１４時３０分　次回は７月２１日",
+      "datetime": "2022-07-21T14:30:00+09:00"
+    },
+    {
+      "target": "３か月予報",
+      "text": "３か月予報：８月２３日（火）　１４時",
+      "datetime": "2022-08-23T14:00:00+09:00"
+    }
+  ],
+  "notice": "　なお、８月の予報については、新しい資料による次回以降の１か月予報を適宜ご利用ください。"
+}
