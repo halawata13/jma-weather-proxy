@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service';
 import { promises as fs } from 'fs';
-import axios from 'axios';
 import { DateTime } from 'luxon';
 import { ConfigService } from '@nestjs/config';
+import fetch from 'node-fetch';
 
 export enum RequestType {
   forecastArea,
@@ -54,7 +54,7 @@ export class RequestService {
           return JSON.parse(data) as T;
         }
 
-        return await axios.get<T>(path).then((res) => res.data);
+        return await fetch(path).then((res) => res.json() as T);
       } catch (err) {
         console.error(err);
         throw err;
