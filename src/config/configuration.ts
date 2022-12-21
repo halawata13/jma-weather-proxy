@@ -19,15 +19,15 @@ const configuration: ConfigFactory = () => {
   }
 
   if ('DUMMY_DATA' in process.env) {
-    config.jmaUrl.forecastArea = '/sample/forecast_area.json';
-    config.jmaUrl.weekArea05 = '/sample/week_area05.json';
-    config.jmaUrl.weekAreaName = '/sample/week_area_name.json';
-    config.jmaUrl.area = '/sample/area.json';
-    config.jmaUrl.forecast = '/sample/{PREF_CODE}0000.json';
-    config.jmaUrl.twoWeekForecast = '/sample/data_47636.json';
-    config.jmaUrl.seasonForecast = '/sample/{RANGE}.json';
-    config.jmaUrl.amedas = '/sample/amedas01.json';
-    config.jmaUrl.amedasTable = '/sample/amedastable.json';
+    config.jmaUrl.forecastArea = '/../sample/forecast_area.json';
+    config.jmaUrl.weekArea05 = '/../sample/week_area05.json';
+    config.jmaUrl.weekAreaName = '/../sample/week_area_name.json';
+    config.jmaUrl.area = '/../sample/area.json';
+    config.jmaUrl.forecast = '/../sample/{PREF_CODE}0000.json';
+    config.jmaUrl.twoWeekForecast = '/../sample/data_47636.json';
+    config.jmaUrl.seasonForecast = '/../sample/{RANGE}.json';
+    config.jmaUrl.amedas = '/../sample/amedas01.json';
+    config.jmaUrl.amedasTable = '/../sample/amedastable.json';
   }
 
   return config;
