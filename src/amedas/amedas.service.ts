@@ -27,6 +27,38 @@ export class AmedasService {
 
     const reportDatetime = DateTime.fromFormat(key, 'yyyyMMddHHmmss').toISO();
 
+    // 最高気温、最低気温、最大瞬間風速の時間はUTCなのでJSTに直す
+    const maxTempTime = (() => {
+      if (values.maxTempTime.hour === null || values.maxTempTime.minute === null) {
+        return null;
+      }
+
+      return DateTime.now()
+        .setZone('UTC')
+        .set({ hour: values.maxTempTime.hour, minute: values.maxTempTime.minute })
+        .setZone('Asia/Tokyo');
+    })();
+    const minTempTime = (() => {
+      if (values.minTempTime.hour === null || values.minTempTime.minute === null) {
+        return null;
+      }
+
+      return DateTime.now()
+        .setZone('UTC')
+        .set({ hour: values.minTempTime.hour, minute: values.minTempTime.minute })
+        .setZone('Asia/Tokyo');
+    })();
+    const gustTime = (() => {
+      if (values.gustTime.hour === null || values.gustTime.minute === null) {
+        return null;
+      }
+
+      return DateTime.now()
+        .setZone('UTC')
+        .set({ hour: values.gustTime.hour, minute: values.gustTime.minute })
+        .setZone('Asia/Tokyo');
+    })();
+
     return {
       pressure: values.pressure?.[0] ?? null,
       normalPressure: values.pressure?.[0] ?? null,
@@ -45,14 +77,14 @@ export class AmedasService {
       precipitation24h: values.precipitation24h[0],
       windDirection: values.windDirection?.[0] ?? null,
       wind: values.wind?.[0] ?? null,
-      maxTempTimeHour: values.maxTempTime.hour,
-      maxTempTimeMinute: values.maxTempTime.minute,
+      maxTempTimeHour: maxTempTime?.hour ?? null,
+      maxTempTimeMinute: maxTempTime?.minute ?? null,
       maxTemp: values.maxTemp?.[0] ?? null,
-      minTempTimeHour: values.minTempTime.hour,
-      minTempTimeMinute: values.minTempTime.minute,
+      minTempTimeHour: minTempTime?.hour ?? null,
+      minTempTimeMinute: minTempTime?.minute ?? null,
       minTemp: values.minTemp?.[0] ?? null,
-      gustTimeHour: values.gustTime.hour,
-      gustTimeMinute: values.gustTime.minute,
+      gustTimeHour: gustTime?.hour ?? null,
+      gustTimeMinute: gustTime?.minute ?? null,
       gustDirection: values.gustDirection?.[0] ?? null,
       gust: values.gust?.[0] ?? null,
       reportDatetime,
