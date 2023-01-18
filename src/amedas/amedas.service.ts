@@ -18,10 +18,22 @@ export class AmedasService {
     const [data, amedasTable] = await Promise.all([this.getData(amedasCode), this.getAmedasTable()]).catch(() => {
       throw new NotFoundException();
     });
-    const key = Object.keys(data)[0];
-    const values = Object.values(data)[0];
+
+    // 最新のアメダス
+    const key = Object.keys(data).reverse()[0];
+    const values = Object.values(data).reverse()[0];
     const amedasName = amedasTable[amedasCode].kjName;
-    if (!key || !values || !amedasName) {
+
+    // 1時間ごとのアメダス
+    let valuesPerHour: typeof values | undefined;
+    for (const key of Object.keys(data).reverse()) {
+      const date = DateTime.fromFormat(key, 'yyyyMMddHHmmss');
+      if (date.minute === 0) {
+        valuesPerHour = data[key];
+      }
+    }
+
+    if (!key || !values || !amedasName || !valuesPerHour) {
       throw new NotFoundException();
     }
 
@@ -61,14 +73,14 @@ export class AmedasService {
 
     return {
       pressure: values.pressure?.[0] ?? null,
-      normalPressure: values.pressure?.[0] ?? null,
+      normalPressure: values.normalPressure?.[0] ?? null,
       temp: values.temp?.[0] ?? null,
       humidity: values.humidity?.[0] ?? null,
-      snow: values.snow?.[0] ?? null,
-      snow1h: values.snow1h[0],
-      snow6h: values.snow6h[0],
-      snow12h: values.snow12h[0],
-      snow24h: values.snow24h[0],
+      snow: values.snow?.[0] ?? valuesPerHour.snow?.[0] ?? null,
+      snow1h: values.snow1h?.[0] ?? valuesPerHour.snow1h[0],
+      snow6h: values.snow6h?.[0] ?? valuesPerHour.snow6h[0],
+      snow12h: values.snow12h?.[0] ?? valuesPerHour.snow12h[0],
+      snow24h: values.snow24h?.[0] ?? valuesPerHour.snow24h[0],
       sun10m: values.sun10m?.[0] ?? null,
       sun1h: values.sun1h?.[0] ?? null,
       precipitation10m: values.precipitation10m[0],
