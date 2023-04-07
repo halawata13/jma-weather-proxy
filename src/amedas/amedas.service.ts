@@ -99,7 +99,7 @@ export class AmedasService {
       gustTimeMinute: gustTime?.minute ?? null,
       gustDirection: values.gustDirection?.[0] ?? null,
       gust: values.gust?.[0] ?? null,
-      reportDatetime,
+      reportDatetime: reportDatetime ?? '',
       amedasCode,
       amedasName,
     };

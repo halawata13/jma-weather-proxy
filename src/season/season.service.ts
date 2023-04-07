@@ -25,8 +25,8 @@ export class SeasonService {
 
     const date0 = DateTime.fromISO(data.timeDefines[0]);
     const item0: SeasonItem = {
-      fromDate: date0.toISODate(),
-      toDate: date0.plus({ month: 1, day: -1 }).toISODate(),
+      fromDate: date0.toISODate() ?? '',
+      toDate: date0.plus({ month: 1, day: -1 }).toISODate() ?? '',
       temperature: data.temperature[seasonArea.areaCode][0],
       precipitation: data.precipitation?.[seasonArea.areaCode][0],
       sunshine: data.sunshine?.[seasonArea.areaCode]?.[0],
@@ -37,8 +37,8 @@ export class SeasonService {
       const date = DateTime.fromISO(timeDefines);
 
       return {
-        fromDate: date.toISODate(),
-        toDate: date.plus({ day: i > 1 ? 13 : 6 }).toISODate(),
+        fromDate: date.toISODate() ?? '',
+        toDate: date.plus({ day: i > 1 ? 13 : 6 }).toISODate() ?? '',
         temperature: data.temperature[seasonArea.areaCode][i + 1],
       };
     });
@@ -63,8 +63,8 @@ export class SeasonService {
 
     const date0 = DateTime.fromISO(data.timeDefines[0]);
     const item0: SeasonItem = {
-      fromDate: date0.toISODate(),
-      toDate: date0.plus({ month: 3, day: -1 }).toISODate(),
+      fromDate: date0.toISODate() ?? '',
+      toDate: date0.plus({ month: 3, day: -1 }).toISODate() ?? '',
       temperature: data.temperature[seasonArea.areaCode][0],
       precipitation: data.precipitation?.[seasonArea.areaCode][0],
       sunshine: data.sunshine?.[seasonArea.areaCode]?.[0],
@@ -75,8 +75,8 @@ export class SeasonService {
       const date = DateTime.fromISO(timeDefines);
 
       return {
-        fromDate: date.toISODate(),
-        toDate: date.plus({ month: 1, day: -1 }).toISODate(),
+        fromDate: date.toISODate() ?? '',
+        toDate: date.plus({ month: 1, day: -1 }).toISODate() ?? '',
         temperature: data.temperature[seasonArea.areaCode][i + 1],
       };
     });
@@ -104,8 +104,8 @@ export class SeasonService {
     return {
       items: [
         {
-          fromDate: date.toISODate(),
-          toDate: date.plus({ month: 3, day: -1 }).toISODate(),
+          fromDate: date.toISODate() ?? '',
+          toDate: date.plus({ month: 3, day: -1 }).toISODate() ?? '',
           temperature: data.temperature[seasonArea.areaCode][0],
           precipitation: data.precipitation?.[seasonArea.areaCode][0],
           sunshine: data.sunshine?.[seasonArea.areaCode]?.[0],

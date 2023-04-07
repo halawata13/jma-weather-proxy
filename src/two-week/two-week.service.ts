@@ -37,9 +37,9 @@ export class TwoWeekService {
           return;
         }
 
-        const date = DateTime.local(row.yy, row.mm, row.dd).toISODate();
+        const date = DateTime.local(row.yy, row.mm, row.dd).toISODate() ?? '';
         let values: Partial<TwoWeekForecastItem> = weekMap.get(date) ?? {};
-        values.date = date;
+        values.date = date ?? '';
 
         if (row.elem === 2) {
           // 最高気温
@@ -63,7 +63,7 @@ export class TwoWeekService {
           throw new Error();
         }
 
-        weekMap.set(date, values as TwoWeekForecastItem);
+        weekMap.set(date ?? '', values as TwoWeekForecastItem);
       });
 
       return Array.from(weekMap.values());
@@ -72,7 +72,7 @@ export class TwoWeekService {
     return {
       week1,
       week2,
-      reportDatetime,
+      reportDatetime: reportDatetime ?? '',
       twoWeekAreaCode: twoWeekArea.areaCode,
       twoWeekAreaName: twoWeekArea.areaName,
     };

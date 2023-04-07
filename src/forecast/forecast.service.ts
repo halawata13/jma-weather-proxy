@@ -85,7 +85,7 @@ export class ForecastService {
     })();
 
     const items = dates.map((date, i) => ({
-      date: DateTime.fromISO(date).toISODate(),
+      date: DateTime.fromISO(date).toISODate() ?? '',
       weatherCode: weatherCodes[i] ?? null,
       weather: weathers[i] ?? null,
       jmaWeatherImgCode: jmaWeatherCodeImgMap[weatherCodes[i]][0] ?? null,
@@ -98,7 +98,7 @@ export class ForecastService {
 
     return {
       items,
-      reportDatetime: reportDatetimeString,
+      reportDatetime: reportDatetimeString ?? '',
       areaCode,
       areaName,
     };
@@ -140,7 +140,7 @@ export class ForecastService {
 
     const items = dates
       .map((date, i) => ({
-        date: DateTime.fromISO(date).toISODate(),
+        date: DateTime.fromISO(date).toISODate() ?? '',
         weatherCode: weatherCodes[i] ?? null,
         jmaWeatherImgCode: jmaWeatherCodeImgMap[weatherCodes[i]][0] ?? null,
         pop: pops[i] ? Number(pops[i]) : null,
@@ -156,7 +156,7 @@ export class ForecastService {
 
     return {
       items,
-      reportDatetime,
+      reportDatetime: reportDatetime ?? '',
       weekAreaCode: weekAreaCode,
       weekAreaName: areaName,
     };
