@@ -8,7 +8,10 @@ import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 @UseGuards(JwtAuthGuard)
 @Resolver()
 export class AmedasResolver {
-  constructor(private readonly amedasService: AmedasService, private readonly commonService: CommonService) {}
+  constructor(
+    private readonly amedasService: AmedasService,
+    private readonly commonService: CommonService,
+  ) {}
 
   /**
    * アメダス

@@ -19,7 +19,10 @@ export enum RequestType {
 
 @Injectable()
 export class RequestService {
-  constructor(private readonly prisma: PrismaService, private readonly configService: ConfigService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly configService: ConfigService,
+  ) {}
 
   /**
    * JSONデータをリクエストする

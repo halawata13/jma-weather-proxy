@@ -7,7 +7,10 @@ import { JmaAmedasData, JmaAmedasTable } from './amedas.type';
 
 @Injectable()
 export class AmedasService {
-  constructor(private readonly configService: ConfigService, private readonly requestService: RequestService) {}
+  constructor(
+    private readonly configService: ConfigService,
+    private readonly requestService: RequestService,
+  ) {}
 
   /**
    * アメダスを取得する

@@ -9,7 +9,10 @@ dotenv.config();
 
 @Controller('token')
 export class TokenController {
-  constructor(private readonly userService: UserService, private readonly jwtService: JwtService) {}
+  constructor(
+    private readonly userService: UserService,
+    private readonly jwtService: JwtService,
+  ) {}
 
   /**
    * トークン取得

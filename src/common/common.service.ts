@@ -7,7 +7,10 @@ import { RequestService, RequestType } from '../infrastructure/request.service';
 
 @Injectable()
 export class CommonService {
-  constructor(private readonly configService: ConfigService, private readonly requestService: RequestService) {}
+  constructor(
+    private readonly configService: ConfigService,
+    private readonly requestService: RequestService,
+  ) {}
 
   async getRegionList(): Promise<RegionList> {
     const [area, forecastArea] = await Promise.all([this.getJmaArea(), this.getJmaForecastArea()]);
