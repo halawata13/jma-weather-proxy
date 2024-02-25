@@ -23,7 +23,7 @@ export class ForecastService {
   async getForecast(areaCode: string): Promise<Forecast> {
     const data = await this.getData(areaCode);
 
-    let areaIndex;
+    let areaIndex: number | undefined;
     data[0].timeSeries[0].areas.forEach((area, i) => {
       if (area.area.code === areaCode) {
         areaIndex = i;
@@ -60,13 +60,13 @@ export class ForecastService {
 
     // 降水確率
     const p = data[0].timeSeries[1].areas[areaIndex].pops.map((v) => (v ? Number(v) : -1));
-    const pops: number[][] = (() => {
+    const pops: (number | null)[][] = (() => {
       if (reportDatetime.hour === 17) {
-        return [[-1, -1, -1, ...p.slice(0, 1)], p.slice(1, 5)];
+        return [[null, null, null, ...p.slice(0, 1)], p.slice(1, 5)];
       } else if (reportDatetime.hour === 5) {
-        return [[-1, ...p.slice(0, 3)], p.slice(3, 7)];
+        return [[null, ...p.slice(0, 3)], p.slice(3, 7)];
       } else {
-        return [[-1, -1, ...p.slice(0, 2)], p.slice(2, 6)];
+        return [[null, null, ...p.slice(0, 2)], p.slice(2, 6)];
       }
     })();
 

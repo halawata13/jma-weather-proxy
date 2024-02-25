@@ -33,7 +33,7 @@ export class ForecastItem {
   @Field(() => [Int], {
     nullable: 'items',
   })
-  pop: number[] | null;
+  pop: (number | null)[] | null;
 
   @Field(() => Int, {
     nullable: true,
