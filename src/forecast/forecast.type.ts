@@ -1,3 +1,9 @@
+export type JmaForecastGroupData = {
+  officeCode: string;
+  name: string;
+  srf
+}[];
+
 export type JmaForecastData = [
   {
     publishingOffice: string;

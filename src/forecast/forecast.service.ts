@@ -1,4 +1,4 @@
-import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+import { Injectable, InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common';
 import { JmaForecastData } from './forecast.type';
 import { Forecast, WeeklyForecast } from './forecast.schema';
 import { ConfigService } from '@nestjs/config';
@@ -9,6 +9,8 @@ import { jmaWeatherCodeImgMap } from '../common/common.data';
 
 @Injectable()
 export class ForecastService {
+  private readonly logger = new Logger(ForecastService.name);
+
   constructor(
     private readonly configService: ConfigService,
     private readonly requestService: RequestService,
@@ -163,12 +165,14 @@ export class ForecastService {
   }
 
   private async getData(weekAreaCode: string) {
-    const prefCode = weekAreaCode.slice(0, 2);
-    const url = this.configService.get<string>('jmaUrl.forecast')?.replace('{PREF_CODE}', prefCode);
+    // 北海道は先頭3桁+000、他は先頭2桁+0000
+    const forecastCode = (weekAreaCode.startsWith('01') ? weekAreaCode.slice(0, 3) : weekAreaCode.slice(0, 2)).padEnd(6, '0');
+    const url = this.configService.get<string>('jmaUrl.forecast')?.replace('{FORECAST_CODE}', forecastCode);
     if (url === undefined) {
       throw new InternalServerErrorException('No configuration set');
     }
 
-    return this.requestService.request<JmaForecastData>(RequestType.forecast, url);
+    this.logger.debug(url);
+    return await this.requestService.request<JmaForecastData>(RequestType.forecast, url);
   }
 }
